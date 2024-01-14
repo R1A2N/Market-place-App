@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.marketplace.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_nav_home_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+
+        <action
+            android:id="@+id/action_nav_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_products_list"
+            app:destination="@+id/nav_products_list"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_addproducts"
+        android:name="com.example.marketplace.ui.add_products.AddProductsFragment"
+        android:label="@string/add_products"
+        tools:layout="@layout/fragment_add_products" />
+
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.marketplace.ui.signup.SignUpFragment"
+        android:label="Sign up here"
+        tools:layout="@layout/fragment_sign_up" >
+       <action
+        android:id="@+id/action_signupFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.marketplace.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_productsListFragment"
+            app:destination="@id/nav_products_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_products_list"
+        android:name="com.example.marketplace.ui.products_list.ProductsListFragment"
+        android:label="Products List"
+        tools:layout="@layout/fragment_products_list" />
+
+</navigation>
